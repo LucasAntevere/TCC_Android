@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginTop="5dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="140dp"
+        android:layout_height="220dp">
+
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:background="@color/cardview_light_background"
+            android:id="@+id/card_mini_image_view"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Harry Potter e o Prisioneiro de Azkaban"
+                android:textColor="#111111"
+                android:lines="2"
+                android:ellipsize="end"
+                android:textSize="16sp"
+                android:id="@+id/card_mini_title"/>
+
+            <TextView
+                android:layout_margin="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Portal do Sol, Dobrada"
+                android:textColor="#555555"
+                android:lines="1"
+                android:ellipsize="end"
+                android:textSize="10sp"
+                android:id="@+id/card_mini_subtitle"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
+

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.lucas.antevere.brechlivre.ProductActivity"
+    tools:showIn="@layout/activity_product"
+    android:background="@color/background_default"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorCategoryTitle"
+                android:textSize="20sp"
+                android:text="Harry Potter e a Criança Amaldiçoada"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorCategoryTitle"
+                android:textSize="16sp"
+                android:text="Livros"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="2.5dp">
+                <View
+                    android:background="@drawable/ic_store_24dp"
+                    android:layout_height="17dp"
+                    android:layout_width="17dp"
+                    android:backgroundTint="#555555"
+                    android:layout_marginRight="10dp"></View>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:textSize="14sp"
+                    android:text="Perfeito"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="2.5dp">
+                <View
+                    android:background="@drawable/ic_store_24dp"
+                    android:layout_height="17dp"
+                    android:layout_width="17dp"
+                    android:backgroundTint="#555555"
+                    android:layout_marginRight="10dp"></View>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:textSize="14sp"
+                    android:text="Já li e não me serve mais"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="2.5dp">
+                <View
+                    android:background="@drawable/ic_place_24dp"
+                    android:layout_height="17dp"
+                    android:layout_width="17dp"
+                    android:backgroundTint="#555555"
+                    android:layout_marginRight="10dp"></View>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:textSize="14sp"
+                    android:text="Portal do Sol, Dobrada"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorAccent"
+                    android:textColor="#ffffff"
+                    android:text="Contatar"/>
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorAccent"
+                    android:textColor="#ffffff"
+                    android:text="Mapa"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:id="@+id/product_images_recyclerview">
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+</ScrollView>
+
+
