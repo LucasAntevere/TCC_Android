@@ -35,8 +35,10 @@ public class DashboardLoaderTask extends AsyncTask<Void, Void, Dashboard> {
     protected void onPostExecute(Dashboard dashboard) {
         mActivity.setLoading(false);
 
+        mActivity.loadFeaturedCards(dashboard.getFeaturedCards());
         mActivity.loadCategories(dashboard.getCategories());
         mActivity.loadCarrousels(dashboard.getCarrousels());
+
 
         super.onPostExecute(dashboard);
     }

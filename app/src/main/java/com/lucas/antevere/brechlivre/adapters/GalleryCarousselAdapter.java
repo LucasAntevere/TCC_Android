@@ -14,6 +14,9 @@ import java.util.List;
 public class GalleryCarousselAdapter extends RecyclerView.Adapter<GalleryCarousselAdapter.ViewHolder> {
     private List<String> mDataset;
 
+    private final int IMAGE_WIDTH = 250;
+    private final int IMAGE_HEIGHT = 250;
+
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
@@ -55,7 +58,7 @@ public class GalleryCarousselAdapter extends RecyclerView.Adapter<GalleryCarouss
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        new DownloadImageTask(holder.mImageView).execute(mDataset.get(position));
+        new DownloadImageTask(holder.mImageView, IMAGE_WIDTH, IMAGE_HEIGHT).execute(mDataset.get(position));
     }
 
     // Return the size of your dataset (invoked by the layout manager)

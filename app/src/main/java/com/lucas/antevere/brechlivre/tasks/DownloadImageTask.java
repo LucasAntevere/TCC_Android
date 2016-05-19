@@ -17,10 +17,26 @@ import com.lucas.antevere.brechlivre.utils.ImageLoaderAnimation;
 import java.io.InputStream;
 
 public class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
-    ImageView bmImage;
+    private ImageView bmImage;
+    private int width;
+    private int height;
+    private boolean resize;
+
+    public DownloadImageTask(ImageView bmImage, boolean resize) {
+        this.bmImage = bmImage;
+        this.resize = resize;
+    }
 
     public DownloadImageTask(ImageView bmImage) {
         this.bmImage = bmImage;
+        this.resize = false;
+    }
+
+    public DownloadImageTask(ImageView bmImage, int width, int height) {
+        this.bmImage = bmImage;
+        this.width = width;
+        this.height = height;
+        this.resize = true;
     }
 
     protected Bitmap doInBackground(String... urls) {
@@ -29,7 +45,12 @@ public class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
         try {
             InputStream in = new java.net.URL(urldisplay).openStream();
             mIcon11 = BitmapFactory.decodeStream(in);
-            return Bitmap.createScaledBitmap(mIcon11, 250, 250, true);
+
+            if(!resize){
+                return Bitmap.createBitmap(mIcon11);
+            }else {
+                return Bitmap.createScaledBitmap(mIcon11, width, height, true);
+            }
         } catch (Exception e) {
             Log.e("Error", e.getMessage());
             e.printStackTrace();

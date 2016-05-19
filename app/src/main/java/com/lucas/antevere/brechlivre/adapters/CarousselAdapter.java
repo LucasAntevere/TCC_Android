@@ -18,6 +18,9 @@ import java.util.List;
 public class CarousselAdapter extends RecyclerView.Adapter<CarousselAdapter.ViewHolder> {
     private List<Product> mDataset;
 
+    private final int IMAGE_WIDTH = 250;
+    private final int IMAGE_HEIGHT = 250;
+
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
@@ -68,7 +71,7 @@ public class CarousselAdapter extends RecyclerView.Adapter<CarousselAdapter.View
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
 
-        new DownloadImageTask(holder.mImageView).execute(mDataset.get(position).getImageUrl());
+        new DownloadImageTask(holder.mImageView, IMAGE_WIDTH, IMAGE_HEIGHT).execute(mDataset.get(position).getImageUrl());
         holder.mTitle.setText(mDataset.get(position).getTitle());
         holder.mSubtitle.setText(mDataset.get(position).getCategory());
 

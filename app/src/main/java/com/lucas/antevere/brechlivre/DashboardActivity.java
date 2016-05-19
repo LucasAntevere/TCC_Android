@@ -1,5 +1,6 @@
 package com.lucas.antevere.brechlivre;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -7,6 +8,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -15,7 +19,9 @@ import com.lucas.antevere.brechlivre.adapters.CarousselAdapter;
 import com.lucas.antevere.brechlivre.adapters.CategoryCarrouselAdapter;
 import com.lucas.antevere.brechlivre.contracts.Carrousel;
 import com.lucas.antevere.brechlivre.contracts.Category;
+import com.lucas.antevere.brechlivre.contracts.FeaturedCard;
 import com.lucas.antevere.brechlivre.tasks.DashboardLoaderTask;
+import com.lucas.antevere.brechlivre.tasks.DownloadImageTask;
 import com.lucas.antevere.brechlivre.utils.CircularAnimation;
 
 import java.util.List;
@@ -42,6 +48,25 @@ public class DashboardActivity extends BaseActivity {
         });
 
         new DashboardLoaderTask(this).execute();
+    }
+
+    public void loadFeaturedCards(List<FeaturedCard> featuredCards){
+        LinearLayout linearLayoutBase = (LinearLayout)findViewById(R.id.activity_dashboard_featured_cards_linear_layout);
+
+        if(featuredCards.size() == 0) {
+            ((ViewGroup) linearLayoutBase.getParent()).removeView(linearLayoutBase);
+        }
+
+        for(FeaturedCard featuredCard : featuredCards){
+            View view = getLayoutInflater().inflate(R.layout.card_featured_home, null);
+            ((TextView)view.findViewById(R.id.card_featured_home_title_text_view)).setText(featuredCard.getTitle());
+            ((TextView)view.findViewById(R.id.card_featured_home_subtitle_text_view)).setText(featuredCard.getSubtitle());
+            ImageView imageView = (ImageView)view.findViewById(R.id.card_featured_home_image_view);
+
+            new DownloadImageTask(imageView).execute(featuredCard.getImageUrl());
+
+            linearLayoutBase.addView(view);
+        }
     }
 
     public void loadCategories(List<Category> categories){
