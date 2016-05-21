@@ -16,8 +16,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Os melhores filmes"
-                android:textSize="20sp"
-                android:textStyle="bold"
+                android:textSize="@dimen/card_title_text_size"
                 android:textColor="#222222"
                 android:paddingLeft="20dp"
                 android:layout_marginBottom="2.5dp"/>
@@ -27,7 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Filmes para o fim de semana"
-                android:textSize="15sp"
+                android:textSize="@dimen/card_subtitle_text_size"
                 android:textColor="#666666"
                 android:paddingLeft="20dp"/>
 

@@ -32,18 +32,19 @@ public class DashboardService {
         dash.getCarrousels().add(new Carrousel("Informática", "Nunca fique desconectado", products));
         dash.getCarrousels().add(new Carrousel("Agasalhos", "O frio está vindo, é melhor se preparar", products));
 
-        dash.getCategories().add(new Category(1, "Livros", "#aa0000", "ic_menu_camera"));
-        dash.getCategories().add(new Category(1, "Vestiário", "#d45500", "ic_menu_send"));
-        dash.getCategories().add(new Category(1, "Móveis", "#6c5353", "ic_menu_share"));
-        dash.getCategories().add(new Category(1, "Eletrônicos", "#003380", "ic_menu_gallery"));
-        dash.getCategories().add(new Category(1, "Animais", "#217821", "ic_menu_slideshow"));
-        dash.getCategories().add(new Category(1, "Instrumentos", "#0088aa", "ic_audiotrack_24dp"));
+        dash.getCategories().add(new Category(1, "Livros", "#F44336", "ic_book_black_24dp"));
+        dash.getCategories().add(new Category(1, "Vestiário", "#FF9800", "ic_accessibility_black_24dp"));
+        dash.getCategories().add(new Category(1, "Brinquedos", "#E91E63", "ic_toys_black_24dp"));
+        dash.getCategories().add(new Category(1, "Móveis", "#795548", "ic_weekend_black_24dp"));
+        dash.getCategories().add(new Category(1, "Eletrônicos", "#3F51B5", "ic_devices_black_24dp"));
+        dash.getCategories().add(new Category(1, "Animais", "#4CAF50", "ic_pets_black_24dp"));
+        dash.getCategories().add(new Category(1, "Instrumentos", "#00BCD4", "ic_audiotrack_24dp"));
         dash.getCategories().add(new Category(1, "Veículos", "#536c5d", "ic_settings_24dp"));
         dash.getCategories().add(new Category(1, "Veículos", "#536c5d", "ic_settings_24dp"));
         dash.getCategories().add(new Category(1, "Veículos", "#536c5d", "ic_settings_24dp"));
         dash.getCategories().add(new Category(1, "Veículos", "#536c5d", "ic_settings_24dp"));
 
-        dash.getFeaturedCards().add(new FeaturedCard("Presenteie no Natal", "Aproveite o clima natalino e ajude o próximo.", "http://pradorevista.com.br/wp-content/uploads/2015/12/Feliz-Natal-12.jpg"));
+        dash.getFeaturedCards().add(new FeaturedCard("Parabéns Mães", "Todas as mães merecem ser presentadas. Doe!", "http://pradorevista.com.br/wp-content/uploads/2015/12/Feliz-Natal-12.jpg"));
 
         return dash;
     }

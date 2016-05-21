@@ -31,6 +31,8 @@ public class ProductActivity extends BaseActivity {
         setSupportActionBar(toolbar);
         setActionBarDrawerToggle(toolbar);
 
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,7 +47,7 @@ public class ProductActivity extends BaseActivity {
             if(intent.hasExtra(PRODUCT_ID_EXTRA_NAME)){
                 Toast.makeText(getApplicationContext(), intent.getStringExtra(PRODUCT_ID_EXTRA_NAME), Toast.LENGTH_SHORT).show();
 
-                setTitle(intent.getStringExtra(PRODUCT_ID_EXTRA_NAME));
+                //setTitle("Harry Potter e a Criança Amaldiçoada");
                 new ProductLoaderTask(this).execute(intent.getStringExtra(PRODUCT_ID_EXTRA_NAME));
             }
         }
